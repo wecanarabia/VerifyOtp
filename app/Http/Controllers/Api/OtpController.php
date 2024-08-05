@@ -30,7 +30,7 @@ class OtpController extends Controller
                 $otp = implode('', $formattedNumbers);
                 $data['otp'] = $otp;
                 $data['name'] = $subscription->app_name;
-
+                dd($data);
                 switch ($subscription->type) {
                     case 'email':
                         $data['email'] = $request->contact;
