@@ -35,8 +35,8 @@ class SubscriptionController extends Controller
      */
     public function show(string $id)
     {
-        $country = $this->repository->getByID($id);
-        return view($this->view . 'show', compact('country'));
+        $subscription = $this->repository->getByID($id);
+        return view($this->view . 'show', compact('subscription'));
     }
 
     /**
@@ -44,8 +44,8 @@ class SubscriptionController extends Controller
      */
     public function edit(string $id)
     {
-        $country = $this->repository->getByID($id);
-        return view($this->view . 'edit', compact('country'));
+        $subscription = $this->repository->getByID($id);
+        return view($this->view . 'edit', compact('subscription'));
     }
 
     /**
