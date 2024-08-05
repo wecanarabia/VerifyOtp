@@ -64,7 +64,7 @@ class OtpController extends Controller
 
     public function checkOTP(Request $request, $id)
     {
-        $token = $request->header('Authorization');
+        $token = trim($request->header('Authorization'), "Bearer ");
         $subscription = Subscription::where('token', $token)->where('app_id', $id)->first();
         if (Carbon::now()->between(Carbon::parse($subscription->start_date), Carbon::parse($subscription->end_date))) {
 
