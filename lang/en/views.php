@@ -26,6 +26,7 @@ return [
         "IN ACTIVE"=>"In Active",
         'PHONE NUMBER'=>"Phone Number",
         'PROFILE STATUS'=>"Profile Status",
+        'PROFILE'=>"Profile",
         'STATUS'=>"Status",
         'USER'=>"User",
         'TOKEN'=>"Token",

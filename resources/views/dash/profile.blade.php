@@ -6,7 +6,7 @@
                 <div class="card-body px-4 py-3">
                     <div class="row align-items-center">
                         <div class="col-9">
-                            <h4 class="fw-semibold mb-8">@lang('views.EMPLOYEES')</h4>
+                            <h4 class="fw-semibold mb-8">@lang('views.PROFILE')</h4>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a class="text-muted"
@@ -33,7 +33,7 @@
                                                 class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center gap-3">
 
-                                                    <img src="{{ asset('assets\images\lg\avatar13.png') }}"
+                                                    <img src="{{ asset('dist\images\profile\user-1.jpg') }}"
                                                         alt="user4" width="72" height="72"
                                                         class="rounded-circle">
 

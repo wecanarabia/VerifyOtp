@@ -7,6 +7,7 @@ return [
     "CURRENT SUBSCRIPTIONS"=>"الاشتراكات الحالية",
     'PHONE NUMBER'=>"رقم الهاتف",
     'PROFILE STATUS'=>"حالة الملف الشخصي",
+    'PROFILE'=>"الملف الشخصي",
     "WECAN ID"=>"معرف وي كان",
     "PASSWORD"=>"كلمة المرور",
     "SIGN IN"=>"تسجيل الدخول",
