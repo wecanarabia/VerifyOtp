@@ -31,8 +31,8 @@ Route::controller(UserController::class)->group(function () {
 Route::controller(SubscriptionController::class)->group(function () {
     Route::get('/subscriptions', 'pagination');
     Route::post('/subscriptions/create', 'create');
+    Route::get('/subscriptions/user/{user_id}', 'mySubscriptions');
     Route::post('/subscriptions/{id}', 'edit');
-    Route::get('/subscriptions/{user_id}', 'mySubscriptions');
     Route::get('/subscriptions/{id}', 'show');
 });
 
