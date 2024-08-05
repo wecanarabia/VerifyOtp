@@ -13,9 +13,9 @@
                                         </div>
                                         <div class="mb-4">
                                             <label class="form-label fw-semibold">@lang('views.NUMBER OF MINUTES')<span class="text-danger">*</span></label>
-                                            <input type="number" min="1" max="10" name="number_of_digits" value="{{ old('number_of_digits',isset($subscription)?$subscription->number_of_digits:'') }}"
+                                            <input type="number" min="1" max="10" name="number_of_minutes" value="{{ old('number_of_minutes',isset($subscription)?$subscription->number_of_minutes:'') }}"
                                                 class="form-control">
-                                            @error('number_of_digits')
+                                            @error('number_of_minutes')
                                                 <div class="text-danger">
                                                     {{ $message }}
                                                 </div>
