@@ -42,7 +42,7 @@ class UserController extends ApiController
     {
         try {
             $user = $this->repositry->findUser(['id'=>$request->id]);
-            $user = $this->repositry->update($request->except(['id']), $user);
+            $user = $this->repositry->update($request->except('id'), $user);
             return response(['status' => true,'code' => 200, 'msg' => 'success', 'data' => [
                 'user' =>  UserResource::make($user),
             ]]);
