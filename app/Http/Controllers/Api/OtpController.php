@@ -21,7 +21,7 @@ class OtpController extends Controller
         $subscription = Subscription::where('token', $token)->where('app_id', $id)->first();
             if (Carbon::now()->between(Carbon::parse($subscription->start_date), Carbon::parse($subscription->end_date)) && $subscription->number_of_messages_sent <= $subscription->number_of_messages) {
                 $randomNumbers = [];
-                for ($i = 0; $i < 4; $i++) {
+                for ($i = 0; $i < $subscription->number_of_digits; $i++) {
                     $randomNumbers[] = rand(1, 100);
                 }
                 $formattedNumbers = array_map(function ($number) {
