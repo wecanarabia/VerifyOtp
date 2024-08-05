@@ -12,7 +12,7 @@ use App\Http\Requests\Api\SubscriptionRequest;
 
 class SubscriptionController extends ApiController
 {
-     public function __construct()
+    public function __construct()
     {
         $this->resource = SubscriptionResource::class;
         $this->model = app(Subscription::class);
