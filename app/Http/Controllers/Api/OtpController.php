@@ -17,9 +17,9 @@ class OtpController extends Controller
 
     public function sendOtp(Request $request,$id)
     {
-        $token = $request->header('Authorization');
+        $token = trim($request->header('Authorization'),"Bearer ");
         $subscription = Subscription::where('token', $token)->where('app_id', $id)->first();
-        dd(trim($token,"Bearer "), $id);
+        dd($subscription);
 
             if (Carbon::now()->between(Carbon::parse($subscription->start_date), Carbon::parse($subscription->end_date)) && $subscription->number_of_messages_sent <= $subscription->number_of_messages) {
                 $randomNumbers = [];
