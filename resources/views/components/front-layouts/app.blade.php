@@ -3,14 +3,10 @@
     <img src="{{asset('dist/images/logos/favicon.png')}}" alt="loader" class="lds-ripple img-fluid">
   </div>
   <div
-  class="page-wrapper"
+    class="page-wrapper"
   id="main-wrapper"
-
-  data-layout="horizontal"
-
-
-  data-navbarbg="skin6"
   data-layout="vertical"
+  data-navbarbg="skin6"
   data-sidebartype="full"
   data-sidebar-position="fixed"
   data-header-position="fixed"
