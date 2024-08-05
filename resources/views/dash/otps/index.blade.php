@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="col-8">
                                     <input type="date" name="date" class="form-control"
-                                        value="{{ old('date', date('Y-m-d')) }}" class="form-control">
+                                        value="{{ $_GET['date'] ?? date('Y-m-d') }}" class="form-control">
                                 </div>
                                 <div class="col-4">
                                     <button type="submit" class="btn btn-success">@lang('views.SEARCH')</button>
