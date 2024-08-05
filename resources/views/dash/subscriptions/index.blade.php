@@ -113,7 +113,7 @@
 
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -136,10 +136,10 @@
             </div>
             </form>
         </div>
-    </div>
+    </div> --}}
     </div>
 
-    @push('javasc')
+    {{-- @push('javasc')
         <script>
             $('#deleteModal').on('show.bs.modal', function(event) {
                 var button = $(event.relatedTarget)
@@ -150,6 +150,6 @@
                 modal.find('.modal-body #name').val(name);
             })
         </script>
-    @endpush
+    @endpush --}}
 
 </x-front-layouts.app>
