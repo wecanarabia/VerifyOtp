@@ -32,6 +32,7 @@ Route::controller(SubscriptionController::class)->group(function () {
     Route::get('/subscriptions', 'pagination');
     Route::post('/subscriptions/create', 'create');
     Route::post('/subscriptions/{id}', 'edit');
+    Route::get('/subscriptions/{user_id}', 'mySubscriptions');
     Route::get('/subscriptions/{id}', 'show');
 });
 

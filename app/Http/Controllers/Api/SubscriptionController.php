@@ -36,8 +36,7 @@ class SubscriptionController extends ApiController
 
         return $this->returnData('data',  $this->resource::make($subscription), __('Get  succesfully'));
     }
-    public function mySubscriptions(){
-        $id = auth()->user()->id;
+    public function mySubscriptions($id){
         $subscription = $this->repositry->getNullConditiontion('user_id', $id);
         return $this->returnData('data',  $this->resource::collection( $subscription ), __('Get  succesfully'));
     }
