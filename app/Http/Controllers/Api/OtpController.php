@@ -19,7 +19,6 @@ class OtpController extends Controller
     {
         $token = trim($request->header('Authorization'),"Bearer ");
         $subscription = Subscription::where('token', $token)->where('app_id', $id)->first();
-        dd($subscription->number_of_messages_sent <= $subscription->number_of_messages);
             if (Carbon::now()->between(Carbon::parse($subscription->start_date), Carbon::parse($subscription->end_date)) && $subscription->number_of_messages_sent <= $subscription->number_of_messages) {
                 $randomNumbers = [];
                 for ($i = 0; $i < $subscription->number_of_digits; $i++) {
@@ -45,7 +44,7 @@ class OtpController extends Controller
                         $app->send($data);
                         $done = 1;
                         break;
-                    case 'whatsapp':
+                    case 'unformal_whatsapp':
                         $data['phone'] = $request->contact;
                         $data['instance_id'] = $subscription->unformal_whatsapp_instance_id;
                         $data['token'] = $subscription->unformal_whatsapp_token;
