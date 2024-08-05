@@ -19,8 +19,8 @@ class Subscription extends Model
 
     protected static function booted()
     {
-        static::created(function($subscription) {
-            $pre = (int)$subscription->id*100;
+        static::creating(function($subscription) {
+            $pre = $subscription->id*100;
             $subscription->token = (string)$pre . "|" . Str::random(75);
             $subscription->app_id = rand(1000000000, 9999999999);
         });
