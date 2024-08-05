@@ -17,6 +17,7 @@ class ProfileController extends Controller
     protected $view = 'dash.profile';
     public function profile()
     {
+        dd(auth()->user()->id);
         $user = $this->repository->getUser(['id',auth()->user()->id]);
         return view($this->view, compact('user'));
     }
