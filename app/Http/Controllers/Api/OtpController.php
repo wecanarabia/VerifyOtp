@@ -53,8 +53,7 @@ class OtpController extends Controller
                         break;
                     default:
                         $done = 0;
-                        break;
-
+                }
                     if ($done == 1) {
                         Otp::create(['otp' => $otp, 'expires_at' => Carbon::now()->addMinutes($subscription->number_of_minutes), 'subscription_id' => $subscription->id]);
                         $subscription->update(['number_of_messages_sent'=>$subscription->number_of_messages_sent+1]);
