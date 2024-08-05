@@ -32,7 +32,7 @@ Route::group(['prefix' => Mcamara\LaravelLocalization\Facades\LaravelLocalizatio
         Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
         Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
         Route::get('/profile',[ProfileController::class, 'profile'])->name('profile');
-        Route::resource('/subscriptions',[SubscriptionController::class])->only(['index', 'show', 'edit', 'update']);
+        Route::resource('/subscriptions',SubscriptionController::class)->only(['index', 'show', 'edit', 'update']);
         Route::get('/otps',[OtpController::class, 'index'])->name('otps.index');
 
     });
