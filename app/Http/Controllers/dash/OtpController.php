@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 class OtpController extends Controller
 {
+    protected $view = 'dash.otps.';
     public function __construct() {
         $this->model = app(Otp::class);
         $this->repository = new Repository($this->model);
