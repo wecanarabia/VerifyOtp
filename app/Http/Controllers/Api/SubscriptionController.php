@@ -21,7 +21,7 @@ class SubscriptionController extends ApiController
 
      public function create(SubscriptionRequest $request)
     {
-        if($this->model->where(['user_id' => auth()->user()->id,'type'=>$request['type'],'start_date'=>$request['start_date'],'start_date'=>$request['start_date']])->exists()){
+        if($this->model->where(['user_id' => $request->user_id,'type'=>$request['type'],'start_date'=>$request['start_date'],'start_date'=>$request['start_date']])->exists()){
             return $this->returnError( 'Already subscribed');
         }
         $request['user_id'] = auth()->user()->id;
