@@ -57,7 +57,7 @@ class OtpController extends Controller
             if ($done == 1) {
                 Otp::create(['otp' => $otp, 'expires_at' => Carbon::now()->addMinutes($subscription->number_of_minutes), 'subscription_id' => $subscription->id]);
                 $subscription->update(['number_of_messages_sent' => $subscription->number_of_messages_sent + 1]);
-                return response()->json(['status' => 200, 'message' => 'Otp sent successfully, please check your OTP in' . $subscription->number_of_minutes . ' minutes'], 200);
+                return response()->json(['status' => 200, 'message' => 'Otp sent successfully, please check your OTP in ' . $subscription->number_of_minutes . ' minutes'], 200);
             }
         }
     }
