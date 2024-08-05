@@ -44,6 +44,7 @@ return [
         'UNUSED'=>"Unussed",
         "WECAN ID"=>"WeCan ID",
         "SEARCH"=>"Search",
+        "LOGOUT"=>"Logout",
         "OTPS"=>"OTP LIST",
 
     ];
