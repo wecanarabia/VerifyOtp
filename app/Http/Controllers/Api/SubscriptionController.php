@@ -24,7 +24,7 @@ class SubscriptionController extends ApiController
         if($this->model->where(['user_id' => $request->user_id,'type'=>$request['type'],'start_date'=>$request['start_date'],'start_date'=>$request['start_date']])->exists()){
             return $this->returnError( 'Already subscribed');
         }
-        $request['user_id'] = auth()->user()->id;
+        $request['user_id'] = $request->user_id;
         $subscription = $this->repositry->save($request->all());
         return $this->returnData('data',  $this->resource::make($subscription), __('Get  succesfully'));
     }
