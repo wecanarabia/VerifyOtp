@@ -77,5 +77,6 @@ class OtpController extends Controller
 
             return response()->json(['status' => 400, 'message' => 'Invalid Otp'], 400);
         }
+        return response()->json(['status' => 400, 'message' => 'Something went wrong'], 400);
     }
 }
