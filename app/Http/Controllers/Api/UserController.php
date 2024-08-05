@@ -59,7 +59,7 @@ class UserController extends ApiController
     public function findUser(Request $request)
     {
         try {
-            $user = $this->user->where('phone','like','%' . $request->key . '%')->orWhere('email','like','%' . $request->key . '%')->first();
+            $user = $this->model->where('phone','like','%' . $request->key . '%')->orWhere('email','like','%' . $request->key . '%')->first();
             return response(['status' => true,'code' => 200, 'msg' => 'success', 'data' => [
                 'user' =>  UserResource::make($user),
             ]]);
