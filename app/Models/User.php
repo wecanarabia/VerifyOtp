@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Carbon\Carbon;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
@@ -48,4 +49,15 @@ class User extends Authenticatable
     protected $casts = [
         'password' => 'hashed',
     ];
+
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
+
+    public function currentSubscriptions()
+    {
+        return $this->hasMany(Subscription::class)->where('start_date', '<=', Carbon::now()->format('Y-m-d H:i:s'))
+                    ->where('end_date', '>=', Carbon::now()->format('Y-m-d H:i:s'));
+    }
 }

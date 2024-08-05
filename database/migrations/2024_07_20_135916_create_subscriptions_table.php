@@ -14,13 +14,16 @@ return new class extends Migration
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->string('subscription_id')->nullable();
+            $table->string('app_id')->nullable();
+            $table->string('app_name')->nullable();
             $table->string('token')->nullable();
-            $table->enum('type',['email','whatsapp','both']);
-            $table->integer('number_of_emails')->default(0);
-            $table->integer('number_of_whatsapp_msgs')->default(0);
+            $table->enum('type',['email','whatsapp','unformal_whatsapp']);
+            $table->integer('number_of_messages')->default(0);
+            $table->integer('number_of_messages_sent')->default(0);
             $table->integer('number_of_digits')->default(6);
             $table->integer('number_of_minutes')->default(5);
+            $table->text('unformal_whatsapp_token')->nullable();
+            $table->text('unformal_whatsapp_instance_id')->nullable();
             $table->date('start_date');
             $table->date('end_date');
             $table->timestamps();

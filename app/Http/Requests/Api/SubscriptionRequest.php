@@ -26,10 +26,12 @@ class SubscriptionRequest extends FormRequest
         return [
             "user_id" => "sometimes|exists:users,id",
             "type" => "sometimes|in:email,whatsapp,both",
-            "number_of_emails" => "sometimes|integer|min:0",
-            "number_of_whatsapp_msgs" => "sometimes|integer|min:0",
-            "number_of_digits" => "sometimes|integer|min:0",
-            "number_of_minutes" => "sometimes|integer|min:0",
+            "app_name" => "sometimes|string|min:3",
+            "number_of_messages" => "sometimes|integer|min:0",
+            "number_of_digits" => "sometimes|integer|in:4,5,6",
+            "number_of_digits" => "sometimes|integer|min:1,max:10",
+            "unformal_whatsapp_token" => "sometimes|min:0",
+            "unformal_whatsapp_instance_id" => "sometimes|min:0",
             "start_date" => "sometimes|date_format:Y-m-d",
             "end_date" => "sometimes|date_format:Y-m-d",
         ];

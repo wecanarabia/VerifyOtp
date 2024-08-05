@@ -57,9 +57,9 @@
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     {{-- <span class="hide-menu">@lang('views.MAIN LIST')</span> --}}
                 <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/dashboard")
+                             "selected"=>Request::is("dash/")
                             ])>
-                    <a class="sidebar-link" href="{{ route('admin.dashboard') }}" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('dash.dashboard') }}" aria-expanded="false">
                         <span>
                             <i class="ti ti-aperture"></i>
                         </span>
@@ -91,252 +91,33 @@
                 <!-- Form Input -->
                 <!-- =================== -->
                 <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/admins/*")
+                             "selected"=>Request::is("dash/subscriptions/*")
                             ])>
-                    <a class="sidebar-link" href="{{ route('admin.admins.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-user-circle"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.ADMINS')</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('admin.faqs.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-help-hexagon"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.FAQS')</span>
-                    </a>
-                </li>
-
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/pages/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.pages.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-file-text"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.PAGES')</span>
-                    </a>
-                </li>
-
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/countries/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.countries.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-layout-grid"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.COUNTRIES')</span>
-                    </a>
-                </li>
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/universities/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.universities.index') }}" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('dash.subscriptions.index') }}" aria-expanded="false">
                         <span class="d-flex">
                             <i class="ti ti-list-details"></i>
                         </span>
-                        <span class="hide-menu">@lang('views.UNIVERSITIES')</span>
+                        <span class="hide-menu">@lang('views.SUBSCRIPTION')</span>
                     </a>
                 </li>
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/colleges/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.colleges.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-notes"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.COLLEGES')</span>
-                    </a>
-                </li>
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/majors/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.majors.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-layout"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.MAJORS')</span>
-                    </a>
-                </li>
-               
-                 <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/courses/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.courses.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-layout-grid"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.COURSES')</span>
-                    </a>
-                </li>
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/notifications/*")
-                            ])>
-                        <a class="sidebar-link" href="{{ route('admin.notifications.index') }}" aria-expanded="false">
-                            <span>
-                                <i class="ti ti-bell-star"></i>
-                            </span>
-                            <span class="hide-menu">@lang('views.NOTIFICATIONS')</span>
-                        </a>
-                    </li>
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/units/*")||Request::is("admin/sections/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.units.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-app-window"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.UNITS & SECTIONS')</span>
-                    </a>
-                </li>
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/videos/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.videos.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-app-window"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.VIDEOS')</span>
-                    </a>
-                 </li>
-                  <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/documents/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.documents.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-files"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.DOCUMENTS')</span>
-                    </a>
-                </li>
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/requests/*")||Request::is("admin/request-videos/*")||Request::is("admin/attachments/*")
-                            ])>
-                    <a @class(["sidebar-link","has-arrow","active"=>Request::is("admin/requests/*")]) href="#" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-folder-question"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.REQUESTS')</span>
-                    </a>
-                    <ul aria-expanded="false" @class(["collapse","first-level","in"=>Request::is("admin/requests/*")])>
-                        <li @class(["sidebar-item","active"=>Request::is("admin/requests/project")])>
-                            <a href="{{ route("admin.requests.index",'project') }}" @class(["sidebar-link","active"=>Request::is("admin/requests/project")])>
-                                <div class="round-16 d-flex align-items-center justify-content-center">
-                                    <i class="ti ti-circle"></i>
-                                </div>
-                                <span class="hide-menu">@lang('views.PROJECT REQUESTS')</span>
-                            </a>
-                        </li>
-                         <li @class(["sidebar-item","active"=>Request::is("admin/requests/assignment")])>
-                            <a href="{{ route("admin.requests.index",'assignment') }}" @class(["sidebar-link","active"=>Request::is("admin/requests/assignment")])>
-                                <div class="round-16 d-flex align-items-center justify-content-center">
-                                    <i class="ti ti-circle"></i>
-                                </div>
-                                <span class="hide-menu">@lang('views.ASSIGNMENT REQUESTS')</span>
-                            </a>
-                        </li>
-                         <li @class(["sidebar-item","active"=>Request::is("admin/requests/type_explanation")])>
-                            <a href="{{ route("admin.requests.index",'type_explanation') }}" @class(["sidebar-link","active"=>Request::is("admin/requests/type_explanation")])>
-                                <div class="round-16 d-flex align-items-center justify-content-center">
-                                    <i class="ti ti-circle"></i>
-                                </div>
-                                <span class="hide-menu">@lang('views.EXPLANATION REQUESTS')</span>
-                            </a>
-                        </li>
 
 
-                    </ul>
-                </li>
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/periods/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.periods.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-calendar"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.PERIODS')</span>
-                    </a>
-                </li>
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/orders/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.orders.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-cash-banknote"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.ORDERS')</span>
-                    </a>
-                </li>
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/slider-images/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.slider-images.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-slideshow"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.SLIDER')</span>
-                    </a>
-                </li>
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/interviews/*")||Request::is("admin/interview-attachments/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.interviews.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-brand-twitch"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.INTERVIEW REQUESTS')</span>
-                    </a>
-                </li>
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/subjects/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.subjects.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-clipboard-list"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.SUBJECTS')</span>
-                    </a>
-                </li>
-                <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/users/*")
-                            ])>
-                    <a class="sidebar-link" href="{{ route('admin.users.index') }}" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-users"></i>
-                        </span>
-                        <span class="hide-menu">@lang("views.ALL USERS")</span>
-                    </a>
-                </li>
-              {{--  <li @class(["sidebar-item",
-                             "selected"=>Request::is("admin/vouchers/*")||Request::is("admin/code-requests/*")
-                            ])>
-                    <a @class(["sidebar-link","has-arrow","active"=>Request::is("admin/vouchers/*")||Request::is("admin/code-requests/*")]) href="#" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-layout-sidebar"></i>
-                        </span>
-                        <span class="hide-menu">@lang('views.VOUCHERS AND REPLACEMENTS')</span>
-                    </a>
-                    <ul aria-expanded="false" @class(["collapse","first-level","in"=>Request::is("admin/vouchers/*")||Request::is("admin/code-requests/*")])>
-                        <li @class(["sidebar-item","active"=>Request::is("admin/vouchers/*")])>
-                            <a href="{{ route("admin.vouchers.index") }}" @class(["sidebar-link","active"=>Request::is("admin/vouchers/*")])>
-                                <div class="round-16 d-flex align-items-center justify-content-center">
-                                    <i class="ti ti-circle"></i>
-                                </div>
-                                <span class="hide-menu">@lang('views.VOUCHERS')</span>
-                            </a>
-                        </li>
-                         <li @class(["sidebar-item","active"=>Request::is("admin/code-requests/*")])>
-                             <a href="{{ route("admin.code-requests.index") }}" @class(["sidebar-link","active"=>Request::is("admin/code-requests/*")])>
-                                 <div class="round-16 d-flex align-items-center justify-content-center">
-                                     <i class="ti ti-circle"></i>
-                                 </div>
-                                 <span class="hide-menu">@lang('views.CODE REQUESTS')</span>
-                             </a>
-                        </li> --}}
 
 
+                <li @class(["sidebar-item",
+                             "selected"=>Request::is("admin/otps/*")
+                            ])>
+                    <a class="sidebar-link" href="{{ route('dash.otps.index') }}" aria-expanded="false">
+                        <span class="d-flex">
+                            <i class="ti ti-list"></i>
+                        </span>
+                        <span class="hide-menu">@lang('views.OTPS')</span>
+                    </a>
+                </li>
+
+
+
+            
                     </ul>
                 </li>
 

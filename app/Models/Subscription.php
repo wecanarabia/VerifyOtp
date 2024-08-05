@@ -22,7 +22,7 @@ class Subscription extends Model
         static::creating(function($subscription) {
             $pre = (int)$subscription->id*100;
             $subscription->token = (string)$pre . "|" . Str::random(75);
-            $subscription->subscription_id = rand(1000000000, 9999999999);
+            $subscription->app_id = rand(1000000000, 9999999999);
         });
     }
 }
