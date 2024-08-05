@@ -321,7 +321,7 @@
                                         </a>
                                         <div class="d-grid gap-2">
 
-                                            <a href="{{ route('admin.logout') }}" class="btn btn-outline-primary">@lang('views.LOGOUT')</a>
+                                            <a href="{{ route('dash.logout') }}" class="btn btn-outline-primary">@lang('views.LOGOUT')</a>
                                         </div>
                                     </div>
                                 </div>
