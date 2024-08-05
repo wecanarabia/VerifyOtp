@@ -50,7 +50,7 @@
                     </div>
                   </div>
                   @endif
-                  <form method="post" action="{{ route("admin.login") }}">
+                  <form method="post" action="{{ route("dash.login") }}">
                     @csrf
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">@lang('views.EMAIL')</label>
