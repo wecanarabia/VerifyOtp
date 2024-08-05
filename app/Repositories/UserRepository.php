@@ -50,7 +50,7 @@ class UserRepository extends AbstractRepository
     public function update($data, $user)
     {
 
-        $user->update($data->except(['country_id','university_id','college_id','major_id']));
+        $user->update($data->except(['id','university_id','college_id','major_id']));
 
 
         return $user->fresh();
