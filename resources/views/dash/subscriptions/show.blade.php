@@ -108,7 +108,7 @@
                                                     @elseif($subscription->type == 'unformal_whatsapp')
                                                         @lang('views.UNFORMAL WHATSAPP')
                                                     @endif
-                                                    {{ $subscription->number_of_minutes }}
+                                                    
                                                 </h6>
                                             </div>
 

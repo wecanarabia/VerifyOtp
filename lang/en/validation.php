@@ -186,6 +186,10 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        "app_name"=>"Application Name",
+        "number_of_digits"=>"Number Of Digits",
+        "number_of_minutes"=>"Number Of Minutes",
+    ],
 
 ];

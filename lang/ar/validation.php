@@ -345,9 +345,9 @@ return [
         "permissions"=>"الصلاحيات",
         "role_id"=>"صلاحية",
         "live_status"=>"حالة البث",
-        ""=>"",
-        ""=>"",
-        ""=>"",
+        "app_name"=>"اسم التطبيق",
+        "number_of_digits"=>"عدد الأرقام",
+        "number_of_minutes"=>"عدد الدقائق",
     ],
 
     'values' => [

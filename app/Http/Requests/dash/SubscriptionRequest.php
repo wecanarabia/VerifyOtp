@@ -24,7 +24,7 @@ class SubscriptionRequest extends FormRequest
         return [
             "app_name" => "sometimes|string|min:3",
             "number_of_digits" => "sometimes|integer|in:4,5,6",
-            "number_of_digits" => "sometimes|integer|min:1,max:10",
+            "number_of_minutes" => "sometimes|integer|min:1,max:10",
         ];
     }
 }
