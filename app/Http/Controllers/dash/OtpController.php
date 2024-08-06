@@ -17,7 +17,9 @@ class OtpController extends Controller
 
     public function index(Request $request)
     {
-        $data = $this->model->when(isset($request['date'])&&$request['date']!=null, function ($q) use ($request){
+        $data = $this->model->whereBelongsTo('subscription',function($q){
+            $q->where(['user_id',auth()->user()->id]);
+        })->when(isset($request['date'])&&$request['date']!=null, function ($q) use ($request){
             return $q->whereDate('created_at',$request['date']);
         })->limit(1000)->latest()->get();
         return view($this->view . 'index', compact('data'));

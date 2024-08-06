@@ -26,7 +26,7 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
-        $data = $this->repository->all();
+        $data = $this->repository->getCondition(['user_id'=>auth()->user()->id]);
         return view($this->view . 'index', compact('data'));
     }
 
@@ -36,6 +36,9 @@ class SubscriptionController extends Controller
     public function show(string $id)
     {
         $subscription = $this->repository->getByID($id);
+        if ($subscription->user_id!=auth()->user()->id) {
+            return abort("404");
+        }
         return view($this->view . 'show', compact('subscription'));
     }
 
@@ -45,6 +48,9 @@ class SubscriptionController extends Controller
     public function edit(string $id)
     {
         $subscription = $this->repository->getByID($id);
+        if ($subscription->user_id!=auth()->user()->id) {
+            return abort("404");
+        }
         return view($this->view . 'edit', compact('subscription'));
     }
 
@@ -53,6 +59,10 @@ class SubscriptionController extends Controller
      */
     public function update(SubscriptionRequest $request, string $id)
     {
+        $subscription = $this->repository->getByID($id);
+        if ($subscription->user_id!=auth()->user()->id) {
+            return abort("404");
+        }
         $this->repository->update($request->all(),$id);
 
         return redirect()->route($this->view . 'index')
