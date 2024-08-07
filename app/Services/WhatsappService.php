@@ -2,48 +2,33 @@
 
 namespace App\Services;
 
+use Twilio\Rest\Client;
+
 class WhatsappService
 {
     private $token;
-    private $headers;
+    private $sid;
     public function __construct()
     {
-        $this->token = env("WHATSAPP_TOKEN");
-        $this->headers = [
-            'Content-Type' => 'application/json',
-            'Accept' => 'application/json',
-            'cache-control' => 'no-cache',
-            'Authorization' => $this->token
-        ];
+        $this->token = env("TWILIO_ACCOUNT_TOKEN");
+        $this->sid = env("TWILIO_ACCOUNT_SID");
     }
 
     public function send($data)
     {
         try {
             if ($data['phone'] != null) {
+                    $twilio = new Client($this->sid, $this->token);
 
+                    $message = $twilio->messages
+                    ->create("whatsapp:".$data['phone'], // to
+                        array(
+                        "from" => "whatsapp:+14148000019",
+                        "body" => "Your ".$data['name']." code is ".$data['otp']
+                        )
+                    );
+                    return $message->sid;
 
-
-                $payload = [
-                    "messaging_product" => "whatsapp",
-                    "recipient_type" => "individual",
-                    "to" => $data['phone'],
-                    "type" => "template",
-                    "template" => [
-                        "name"=> $data['name'],
-                        "language"=> ["code"=>"en_US"],
-                        "body" => $data['otp'] . " is your OTP for " . $data['name'] . " verification.",
-                    ]
-                ];
-                $client = new \GuzzleHttp\Client();
-                $version = "";
-                $phoneId = "";
-                $url = "https://graph.facebook.com/$version/$phoneId/messages";
-                $response = $client->request('POST', $url, [
-                    'headers' => $this->headers,
-                    'json' => $payload,
-                ]);
-                return $response->getBody();
             }
         } catch (\Exception $e) {
             return 'Eror: ' . $e->getMessage();
