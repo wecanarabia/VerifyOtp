@@ -65,6 +65,7 @@
                                         <th>@lang('views.APP')</th>
                                         <th>@lang('views.SUBSCRIPTION ID')</th>
                                         <th>@lang('views.OTP')</th>
+                                        <th>@lang('views.CONTACT')</th>
                                         <th>@lang('views.EXPIRATION TIME')</th>
                                         <th>@lang('views.STATUS')</th>
 
@@ -86,6 +87,9 @@
                                             </td>
                                             <td>
                                                 {{ $otp->otp }}
+                                            </td>
+                                             <td>
+                                                {{ $otp->contact }}
                                             </td>
                                              <td>
                                                 {{ $otp->expires_at }}

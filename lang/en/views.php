@@ -39,6 +39,7 @@ return [
         "CREATED AT"=>"Created At",
         "APP"=>"Application Name",
         "OTP"=>"OTP",
+        "CONTACT"=>"Contact",
         "SUBSCRIPTION ID"=>"Subscription ID",
         'USED'=>"Used",
         'UNUSED'=>"Unussed",

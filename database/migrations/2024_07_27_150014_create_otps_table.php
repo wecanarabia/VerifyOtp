@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('subscription_id')->constrained('subscriptions')->cascadeOnDelete();
             $table->string('otp');
+            $table->string('contact');
             $table->dateTime('expires_at');
             $table->boolean('is_used')->default(0);
             $table->timestamps();
