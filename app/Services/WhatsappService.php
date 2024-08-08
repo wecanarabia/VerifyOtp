@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Twilio\Rest\Client;
 
+
 class WhatsappService
 {
     private $token;
@@ -18,17 +19,23 @@ class WhatsappService
     {
         try {
             if ($data['phone'] != null) {
-                    $twilio = new Client($this->sid, $this->token);
+                $twilio = new Client($this->sid, $this->token);
 
-                    $message = $twilio->messages
-                    ->create("whatsapp:".$data['phone'], // to
-                        array(
-                        "from" => "whatsapp:+14148000019",
-                        "body" => "Your ".$data['name']." code is ".$data['otp']
-                        )
+                $message = $twilio->messages
+                    ->create(
+                        "whatsapp:" . $data['phone'], // to
+                        [
+                            "contentSid" => env("TWILIO_TEMPLATE_SID"),
+                            "from" => "whatsapp:+14148000019",
+                            "contentVariables" => json_encode([
+                                "1" => $data['otp'],
+                                "2" => $data['name'],
+                            ]),
+                            "messagingServiceSid" => env("TWILIO_SERVICE_SID"),
+                        ]
+
                     );
-                    return $message->sid;
-
+                return $message->body;
             }
         } catch (\Exception $e) {
             return 'Eror: ' . $e->getMessage();
