@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Services;
+namespace App\Strategies;
 
-class EmailService
+use App\Interfaces\SmsInterface;
+
+class EmailStrategy implements SmsInterface
 {
     private $token;
     private $headers;
@@ -20,13 +22,13 @@ class EmailService
     public function send($data)
     {
         try {
-            if ($data['email'] != null) {
+            if ($data['contact'] != null) {
 
 
 
                 $payload = [
                     "from" => ["address" => "noreply@doverifyit.com"],
-                    "to" => [["email_address" => ["address" => $data['email'], 'name' => $data['name']??'']]],
+                    "to" => [["email_address" => ["address" => $data['contact'], 'name' => $data['name']??'']]],
                     "subject" => "OTP Verification",
                     "htmlbody" => $data['otp'] . " is your OTP for " . $data['name'] . " verification.",
                 ];

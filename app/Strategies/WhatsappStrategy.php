@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Services;
+namespace App\Strategies;
 
 use Twilio\Rest\Client;
+use App\Interfaces\SmsInterface;
 
 
-class WhatsappService
+class WhatsappStrategy implements SmsInterface
 {
     private $token;
     private $sid;
@@ -18,12 +19,12 @@ class WhatsappService
     public function send($data)
     {
         try {
-            if ($data['phone'] != null) {
+            if ($data['contact'] != null) {
                 $twilio = new Client($this->sid, $this->token);
 
                 $message = $twilio->messages
                     ->create(
-                        "whatsapp:" . $data['phone'], // to
+                        "whatsapp:" . $data['contact'], // to
                         [
                             "contentSid" => env("TWILIO_TEMPLATE_SID"),
                             "from" => "whatsapp:+14148000019",
