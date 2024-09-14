@@ -28,6 +28,7 @@ class SubscriptionRequest extends FormRequest
             "type" => "sometimes|in:email,whatsapp,unformal_whatsapp",
             "app_name" => "sometimes|string|min:3",
             "number_of_messages" => "sometimes|integer|min:0",
+            "number_of_messages_sent" => "sometimes|integer|min:0",
             "number_of_digits" => "sometimes|integer|in:4,5,6",
             "number_of_minutes" => "sometimes|integer|min:1,max:10",
             "unformal_whatsapp_token" => "sometimes|min:0",

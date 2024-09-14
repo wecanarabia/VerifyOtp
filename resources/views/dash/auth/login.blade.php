@@ -12,7 +12,7 @@
     <meta name="MobileOptimized" content="width" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="{{asset('dist/images/logos/favicon.png')}}" />
+    {{-- <link rel="shortcut icon" type="image/png" href="{{asset('dist/images/logos/favicon.png')}}" /> --}}
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="{{asset('dist/libs/owl.carousel/dist/assets/owl.carousel.min.css')}}">
     <!-- Core Css -->

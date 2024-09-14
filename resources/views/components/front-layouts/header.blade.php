@@ -4,7 +4,7 @@
 <!-- Mirrored from demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/html/rtl/authentication-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 18 Jun 2023 11:40:42 GMT -->
 <head>
     <!-- Title -->
-    <title>@lang('views.ALMOSAAED')</title>
+    <title>@lang('views.DOVERIFYIT',[],'en')</title>
     <!-- Required Meta Tag -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,7 +12,7 @@
     <meta name="MobileOptimized" content="width" />
        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="{{asset('dist/images/logos/favicon.png')}}" />
+    {{-- <link rel="shortcut icon" type="image/png" href="{{asset('dist/images/logos/favicon.png')}}" /> --}}
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="{{asset('dist/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css')}}">
 

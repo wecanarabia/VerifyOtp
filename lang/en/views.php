@@ -10,6 +10,7 @@ return [
         "REMEMBER ME"=>"Remember me",
         "Subscriotions" => "Subscriotions",
         "Subscriotion" => "Subscriotion",
+        "DOVERIFYIT" => "doverifyit",
         "Edit Subscriotion" => "Edit Subscriotion",
         "DASHBOARD"=>"Dashboard",
         "OPPS" => "Oops!",
