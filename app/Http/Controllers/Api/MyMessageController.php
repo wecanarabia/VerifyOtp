@@ -24,6 +24,6 @@ class MyMessageController extends ApiController
     {
         Log::info('data',$request->all());
         $data =  $this->repositry->save($request->only(['from','body']));
-        return $this->returnData('data',  $this->resource::make($data), __('Succesfully'));
+        return response("Succesfully", 200)->header('Content-Type', 'text/xml');
     }
 }
