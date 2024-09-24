@@ -20,7 +20,9 @@ class MyMessageController extends Controller
     public function recieveMessages(Request $request)
     {
         Log::info('data',$request->all());
-        $data =  $this->repositry->save($request->only(['from','body']));
+        $from = $request->input('From');
+        $body = $request->input('Body');
+        $data =  $this->repositry->save(['from'=>$from,'body'=>$body]);
         return response("Succesfully", 200)->header('Content-Type', 'text/xml');
     }
 }
