@@ -23,7 +23,7 @@ class MyMessageController extends ApiController
     public function recieveMessages(Request $request)
     {
         Log::info('data',$request->all());
-        $data =  $this->repositry->save($request->all());
+        $data =  $this->repositry->save($request->only(['from','body']));
         return $this->returnData('data',  $this->resource::make($data), __('Succesfully'));
     }
 }
