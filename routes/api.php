@@ -43,6 +43,5 @@ Route::controller(OtpController::class)->group(function () {
 });
 
 Route::controller(MyMessageController::class)->group(function () {
-    Route::post('/recieve-messages', 'recieveMessages');
     Route::get('/all-messages', 'index');
 });

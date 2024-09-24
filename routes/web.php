@@ -6,6 +6,7 @@ use App\Http\Controllers\dash\ProfileController;
 use App\Http\Controllers\dash\DashboardController;
 use App\Http\Controllers\dash\OtpController;
 use App\Http\Controllers\dash\SubscriptionController;
+use App\Http\Controllers\dash\MyMessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ use App\Http\Controllers\dash\SubscriptionController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::controller(MyMessageController::class)->group(function () {
+    Route::post('/recieve-messages', 'recieveMessages');
+});
 Route::group(['prefix' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::setLocale().'/dash',
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
     'as' => 'dash.'], function () {
