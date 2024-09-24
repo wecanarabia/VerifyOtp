@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\MyMessageController;
 use App\Http\Controllers\Api\OtpController;
 use App\Http\Controllers\Api\SubscriptionController;
 use App\Http\Controllers\Api\UserController;
@@ -39,4 +40,9 @@ Route::controller(SubscriptionController::class)->group(function () {
 Route::controller(OtpController::class)->group(function () {
     Route::post('/otp-send/{id}', 'sendOtp');
     Route::post('/otp-check/{id}', 'checkOTP');
+});
+
+Route::controller(MyMessageController::class)->group(function () {
+    Route::post('/recieve-messages', 'recieveMessages');
+    Route::get('/all-messages', 'index');
 });
