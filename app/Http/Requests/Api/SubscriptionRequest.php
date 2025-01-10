@@ -25,7 +25,7 @@ class SubscriptionRequest extends FormRequest
     {
         return [
             "user_id" => "sometimes|exists:users,id",
-            "type" => "sometimes|in:email,whatsapp,unformal_whatsapp",
+            "type" => "sometimes|in:email,whatsapp,unformal_whatsapp,double_whatsapp",
             "app_name" => "sometimes|string|min:3",
             "number_of_messages" => "sometimes|integer|min:0",
             "number_of_messages_sent" => "sometimes|integer|min:0",

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use Carbon\Carbon;
 use App\Models\Otp;
+use DoubleWhatsappStrategy;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
 use App\Services\SendService;
@@ -59,6 +60,11 @@ class OtpController extends Controller
                     break;
                 case 'unformal_whatsapp':
                     $smsService = new SendService(new UnformalWhatsappStrategy());
+                    $smsService->sendSms($data);
+                    $done = 1;
+                    break;
+                case 'double_whatsapp':
+                    $smsService = new SendService(new DoubleWhatsappStrategy());
                     $smsService->sendSms($data);
                     $done = 1;
                     break;

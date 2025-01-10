@@ -4,6 +4,7 @@ return [
     'TYPE'=>"النوع",
     'WHATSAPP'=>"واتساب",
     'UNFORMAL WHATSAPP'=>"واتساب غير رسمي",
+    'DOUBLE WHATSAPP'=>"واتساب متعدد",
     "CURRENT SUBSCRIPTIONS"=>"الاشتراكات الحالية",
     'PHONE NUMBER'=>"رقم الهاتف",
     'PROFILE STATUS'=>"حالة الملف الشخصي",

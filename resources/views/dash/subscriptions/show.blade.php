@@ -107,8 +107,10 @@
                                                         @lang('views.WHATSAPP')
                                                     @elseif($subscription->type == 'unformal_whatsapp')
                                                         @lang('views.UNFORMAL WHATSAPP')
+                                                    @elseif($subscription->type == 'double_whatsapp')
+                                                        @lang('views.DOUBLE WHATSAPP')
                                                     @endif
-                                                    
+
                                                 </h6>
                                             </div>
 

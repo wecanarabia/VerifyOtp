@@ -3,6 +3,7 @@ return [
         'TYPE'=>"Type",
         'WHATSAPP'=>"Whatsapp",
         'UNFORMAL WHATSAPP'=>"Unformal Whatsapp",
+        'DOUBLE WHATSAPP'=>"Double Whatsapp",
         'EMAIL'=>"Email",
         "PASSWORD"=>"Password",
         "SIGN IN"=>"Sign in",

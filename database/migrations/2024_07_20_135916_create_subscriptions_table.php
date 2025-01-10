@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('app_id')->nullable();
             $table->string('app_name')->nullable();
             $table->string('token')->nullable();
-            $table->enum('type',['email','whatsapp','unformal_whatsapp']);
+            $table->enum('type',['email','whatsapp','unformal_whatsapp','double_whatsapp']);
             $table->integer('number_of_messages')->default(0);
             $table->integer('number_of_messages_sent')->default(0);
             $table->integer('number_of_digits')->default(6);

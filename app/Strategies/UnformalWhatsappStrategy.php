@@ -22,9 +22,6 @@ class UnformalWhatsappStrategy implements SmsInterface
         try {
             if ($data['contact'] != null) {
 
-
-
-
                 $client = new \GuzzleHttp\Client();
                 $url = "http://dash.nashme.net/api/send?number=" . $data['contact'] . "&type=text&message=" . $data['otp'] . " is your OTP for " . $data['name'] . " verification.&instance_id=" . $data['instance_id'] . "&access_token=" . $data['token'];
                 $response = $client->request('POST', $url, [
