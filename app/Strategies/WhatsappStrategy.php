@@ -36,7 +36,6 @@ class WhatsappStrategy implements SmsInterface
                         ]
 
                     );
-                dd($message);
                 return $message->body;
             }
         } catch (\Exception $e) {
