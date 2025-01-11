@@ -28,7 +28,8 @@ class UnformalWhatsappStrategy implements SmsInterface
                     'headers' => $this->headers,
                     'json' => "",
                 ]);
-                return $response;
+                dd($response->getStatusCode(), $response->getReasonPhrase);
+                return $response->getStatusCode();
             }
         } catch (\Exception $e) {
             return 'Eror: ' . $e->getMessage();
