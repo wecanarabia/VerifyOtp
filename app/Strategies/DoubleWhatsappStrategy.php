@@ -14,7 +14,7 @@ class DoubleWhatsappStrategy implements SmsInterface
         $send = $unformal->send($data);
         $times = 0;
         dd($send);
-        while ((isset($send['status'])&&$send['status'] != "success")&& $times < 3) {
+        while ($send != "OK" && $times < 3) {
             $send = $unformal->send($data);
             $times++;
         }
