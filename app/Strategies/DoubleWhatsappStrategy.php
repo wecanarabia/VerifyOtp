@@ -13,7 +13,6 @@ class DoubleWhatsappStrategy implements SmsInterface
         $unformal = new UnformalWhatsappStrategy();
         $send = $unformal->send($data);
         $times = 0;
-        dd($send);
         while ($send != "OK" && $times < 3) {
             $send = $unformal->send($data);
             $times++;
