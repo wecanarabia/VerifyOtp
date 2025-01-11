@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Strategies;
+
 use App\Interfaces\SmsInterface;
 use App\Strategies\WhatsappStrategy;
 use App\Strategies\UnformalWhatsappStrategy;

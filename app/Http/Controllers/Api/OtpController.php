@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use Carbon\Carbon;
 use App\Models\Otp;
-use DoubleWhatsappStrategy;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
 use App\Services\SendService;
@@ -12,6 +11,7 @@ use App\Strategies\EmailStrategy;
 use App\Http\Controllers\Controller;
 use App\Strategies\WhatsappStrategy;
 use App\Strategies\UnformalWhatsappStrategy;
+use App\Strategies\DoubleWhatsappStrategy;
 
 class OtpController extends Controller
 {
