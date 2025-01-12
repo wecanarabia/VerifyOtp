@@ -24,13 +24,16 @@ class EmailStrategy implements SmsInterface
         try {
             if ($data['contact'] != null) {
 
-
+                $htmlBody = View::make("emails.mail", [
+                    'data' => $data,
+                ])->render();
 
                 $payload = [
                     "from" => ["address" => "noreply@doverifyit.com"],
                     "to" => [["email_address" => ["address" => $data['contact'], 'name' => $data['name']??'']]],
                     "subject" => "OTP Verification",
-                    "htmlbody" => $data['otp'] . " is your OTP for " . $data['name'] . " verification.",
+                    "htmlbody" => $htmlBody,
+                    // "htmlbody" => $data['otp'] . " is your OTP for " . $data['name'] . " verification.",
                 ];
                 $client = new \GuzzleHttp\Client();
                 $response = $client->request('POST', "https://api.zeptomail.com/v1.1/email", [
