@@ -3,6 +3,7 @@
 namespace App\Strategies;
 
 use App\Interfaces\SmsInterface;
+use Illuminate\Support\Facades\View;
 
 class EmailStrategy implements SmsInterface
 {
